@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">Погода</string>
     <string name="feels_like_label">Ощущается как</string>
     <string name="temperature_label">Температура</string>
+    <string name="fragment_button_update">Получить прогноз</string>
+    <string name="menu_drawer_about">О приложении</string>
+    <string name="menu_drawer_home">Назад</string>
+    <string name="menu_drawer_settings">Настройки</string>
+    <string name="nav_header_title">Weather APP</string>
+    <string name="nav_header_subtitle">by MK</string>
+    <string name="navigation_drawer_open">123</string>
+    <string name="navigation_drawer_close">321</string>
 </resources>

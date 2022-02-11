@@ -55,13 +55,19 @@ class MainFragment : Fragment() {
                 val weatherData = appState.weatherData
                 binding.loadingLayout.visibility = View.GONE
                 binding.cityName.text = weatherData.city.city
-                (weatherData.city.lat.toString() +"   " + weatherData.city.lon.toString()).also { binding.cityCoordinates.text = it }
-                binding.temperatureValue.text = weatherData.temperature.toString()
-                binding.feelsLikeValue.text = weatherData.feelsLike.toString()
-                Snackbar.make(binding.root, "Success", Snackbar.LENGTH_LONG).show()
-            }
+             //   (weatherData.city.lat.toString() +"   " + weatherData.city.lon.toString()).also { binding.cityCoordinates.text = it }
+                binding.temperatureValue.text = "${weatherData.toString(weatherData.temperature)}\u00B0"
+                binding.feelsLike.text = "Ощущается как  ${weatherData.toString(weatherData.feelsLike)}°"
+                binding.condition.text = "Облачно"
+                binding.windDir.text = "Ветер северный"
+                binding.windSpeed.text = "Скорость ветра 1 м/с"
+                            }
             is AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
+                Snackbar
+                    .make(binding.root, "Loading", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Reload") { viewModel.getWeather() }
+                    .show()
             }
             is AppState.Error -> {
                 binding.loadingLayout.visibility = View.GONE
