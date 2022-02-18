@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.weather.R
 import com.example.weather.databinding.MainActivityBinding
-import android.graphics.drawable.Drawable
 import android.view.MenuItem
-import android.view.View
-
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout

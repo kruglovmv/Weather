@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_grey">
+    android:background="@drawable/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainView"
@@ -137,7 +137,8 @@
             android:text="@string/fragment_button_update"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wind_holder" />
+            app:layout_constraintTop_toBottomOf="@+id/wind_holder"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <FrameLayout
             android:id="@+id/loadingLayout"
