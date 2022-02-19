@@ -18,4 +18,5 @@
     <dimen name="recycler_item_text_size">25sp</dimen>
     <dimen name="recycler_item_line_height">1dp</dimen>
     <dimen name="recycler_item_line_margin_end">20dp</dimen>
+    <dimen name="fragment_details_hight_image">250dp</dimen>
 </resources>
