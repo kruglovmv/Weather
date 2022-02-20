@@ -28,7 +28,7 @@ class MainFragment : Fragment() {
                 bundle.putParcelable(DetailsFragment.BUNDLE_EXTRA, weather)
                 manager.beginTransaction()
                     .replace(R.id.container, DetailsFragment.newInstance(bundle))
-                    .addToBackStack("")
+                    .addToBackStack(null)
                     .commitAllowingStateLoss()
             }
         }
@@ -59,10 +59,10 @@ class MainFragment : Fragment() {
     private fun changeWeatherDataSet() {
         if (isDataSetRus) {
             viewModel.getWeatherFromLocalSourceWorld()
-            binding.mainFragmentFAB.setImageResource(R.drawable.ic_baseline_flag_24)
+            binding.mainFragmentFAB.setImageResource(R.drawable.all)
         } else {
             viewModel.getWeatherFromLocalSourceRus()
-            binding.mainFragmentFAB.setImageResource(R.drawable.ic_baseline_outlined_flag_24)
+            binding.mainFragmentFAB.setImageResource(R.drawable.russ)
         }
         isDataSetRus = !isDataSetRus
     }

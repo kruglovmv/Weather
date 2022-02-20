@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/fragment_details_hight_image"
         android:background="@drawable/weather"
-        app:srcCompat="@drawable/weather" />
+        app:srcCompat="@drawable/weather2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainView"
@@ -21,15 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/city_name_margin_top"
-            android:gravity="center_vertical|center_horizontal"
             android:orientation="horizontal"
+            android:gravity="center_vertical|center_horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_5_dp"
@@ -39,38 +38,36 @@
                 android:id="@+id/city_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/city_name_margin_top"
+                android:layout_margin="@dimen/margin_5_dp"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/city_name_text_size"
                 android:textStyle="bold"
                 tools:text="Москва" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <TextView
             android:id="@+id/temperature_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_15_dp"
-            android:layout_marginBottom="@dimen/margin_15_dp"
+            android:layout_margin="@dimen/margin_5_dp"
             android:textColor="@color/text_color"
             android:textSize="@dimen/temperature_value_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/city_holder"
             tools:text="+15°" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <TextView
             android:id="@+id/feelsLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_15_dp"
+            android:layout_marginTop="@dimen/margin_5_dp"
             android:text="@string/feels_like_label"
-            android:textColor="@color/text_color"
             android:textStyle="bold"
+            android:textColor="@color/text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/temperature_value" />
+            app:layout_constraintTop_toBottomOf="@+id/city_holder" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/condition_holder"
@@ -132,12 +129,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/margin_5_dp"
+                android:layout_margin="@dimen/city_name_margin_top"
                 android:textColor="@color/text_color"
                 android:textStyle="bold"
                 tools:text="Направление ветра" />
         </androidx.appcompat.widget.LinearLayoutCompat>
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/pressure_holder"
             android:layout_width="wrap_content"
@@ -158,7 +154,7 @@
                 android:textStyle="bold"
                 tools:text="Давление " />
 
-               <TextView
+            <TextView
                 android:id="@+id/humidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -175,10 +171,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_15_dp"
             android:text="@string/fragment_button_update"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wind_holder" />
+            app:layout_constraintTop_toBottomOf="@+id/pressure_holder"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <FrameLayout
             android:id="@+id/loadingLayout"

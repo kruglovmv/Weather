@@ -12,4 +12,6 @@
     <string name="navigation_drawer_close">321</string>
     <string name="error">Error</string>
     <string name="reload">Reload</string>
+    <string name="about">About</string>
+    <string name="api_yandex_map_key">0c72bda4-a3b5-4e2c-9bda-867951241b8d</string>
 </resources>
