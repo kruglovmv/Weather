@@ -26,15 +26,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_5_dp"
-                android:src="@drawable/ic_baseline_search_24" />
-
             <TextView
                 android:id="@+id/city_name"
                 android:layout_width="wrap_content"
@@ -169,16 +160,6 @@
                 tools:text="Влажность" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/main_fragment_bottom_get_data"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_15_dp"
-            android:text="@string/fragment_button_update"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wind_holder" />
 
         <FrameLayout
             android:id="@+id/loadingLayout"

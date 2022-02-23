@@ -51,6 +51,16 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.mainFragmentRecyclerView.adapter = adapter
         binding.mainFragmentFAB.setOnClickListener { changeWeatherDataSet() }
+        binding.mainFragmentFABSearch.setOnClickListener {
+            val manager = activity?.supportFragmentManager
+            if (manager != null) {
+                manager.beginTransaction()
+                    .replace(R.id.container, MapFragment.newInstance())
+                    .addToBackStack(null)
+                    .commitAllowingStateLoss()
+            }
+        }
+
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         viewModel.getWeatherFromLocalSourceRus()

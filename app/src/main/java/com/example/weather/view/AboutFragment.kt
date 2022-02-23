@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.weather.databinding.FragmentAboutBinding
 import com.example.weather.databinding.FragmentDetailsBinding
 import com.example.weather.viewmodel.MainViewModel
-// TODO: 20.02.2022  возврат из фрагмента - доработать логику
+// TODO: 20.02.2022  возврат из фрагмента - доработать логику м
 class AboutFragment:Fragment() {
     private lateinit var viewModel: MainViewModel
 

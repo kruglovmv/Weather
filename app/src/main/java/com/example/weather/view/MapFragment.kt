@@ -28,6 +28,10 @@ class MapFragment : Fragment() {
             fragment.arguments = bundle
             return fragment
         }
+        fun newInstance(): MapFragment {
+            val fragment = MapFragment()
+            return fragment
+        }
     }
 
     private var _binding: FragmentMapBinding? = null
@@ -53,7 +57,7 @@ class MapFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         MapKitInitializer.initialize(context)
         _binding = FragmentMapBinding.inflate(inflater, null, false)
         val view = binding.root
@@ -68,9 +72,9 @@ class MapFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var lon: Double =
+        val lon: Double =
             arguments?.getParcelable<Weather>(DetailsFragment.BUNDLE_EXTRA)?.city?.lon ?: 37.573856
-        var lat: Double =
+        val lat: Double =
             arguments?.getParcelable<Weather>(DetailsFragment.BUNDLE_EXTRA)?.city?.lat ?: 55.751574
 
         mapView = binding.mapview

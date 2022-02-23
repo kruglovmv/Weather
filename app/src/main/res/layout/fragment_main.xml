@@ -26,13 +26,23 @@
         android:src="@drawable/russ"
         app:tint="@null"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mainFragmentFABSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="@dimen/fab_icon_size"
+        android:src="@drawable/ic_baseline_search_24"
+        app:tint="@null"/>
     <FrameLayout
         android:id="@+id/mainFragmentLoadingLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_background"
         android:visibility="gone"
-        tools:visibility="visible">
+        tools:visibility="invisible">
 
         <ProgressBar
             style="?android:attr/progressBarStyleLarge"

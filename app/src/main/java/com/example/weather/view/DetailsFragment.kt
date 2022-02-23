@@ -15,7 +15,7 @@ import com.example.weather.viewmodel.MainViewModel
 import com.yandex.mapkit.MapKitFactory
 
 
-class DetailsFragment : Fragment(), View.OnClickListener {
+class DetailsFragment : Fragment() {
 
     companion object {
 
@@ -28,7 +28,6 @@ class DetailsFragment : Fragment(), View.OnClickListener {
         }
     }
 
-
     private lateinit var viewModel: MainViewModel
 
     private var _binding: FragmentDetailsBinding? = null
@@ -39,7 +38,7 @@ class DetailsFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -66,21 +65,8 @@ class DetailsFragment : Fragment(), View.OnClickListener {
             binding.humidity?.text = "Влажность ${weather.humidity} %"
 
         }
-        binding.search?.setOnClickListener(this)
     }
 
-    override fun onClick(p0: View?) {
-        val manager = activity?.supportFragmentManager
-        if (manager != null) {
-            val bundle = Bundle()
-            bundle.putParcelable(MapFragment.BUNDLE_EXTRA, arguments?.getParcelable<Weather>(BUNDLE_EXTRA))
-            manager.beginTransaction()
-                .replace(R.id.container, MapFragment.newInstance(bundle))
-                .addToBackStack("")
-                .commit()
-        }
-
-    }
 
 
 }
