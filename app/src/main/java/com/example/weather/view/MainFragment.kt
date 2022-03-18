@@ -28,7 +28,7 @@ class MainFragment : Fragment() {
                 bundle.putParcelable(DetailsFragment.BUNDLE_EXTRA, weather)
                 manager.beginTransaction()
                     .replace(R.id.container, DetailsFragment.newInstance(bundle))
-                    .addToBackStack("")
+                    .addToBackStack(null)
                     .commitAllowingStateLoss()
             }
         }
@@ -51,6 +51,16 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.mainFragmentRecyclerView.adapter = adapter
         binding.mainFragmentFAB.setOnClickListener { changeWeatherDataSet() }
+        binding.mainFragmentFABSearch.setOnClickListener {
+            val manager = activity?.supportFragmentManager
+            if (manager != null) {
+                manager.beginTransaction()
+                    .replace(R.id.container, MapFragment.newInstance())
+                    .addToBackStack(null)
+                    .commitAllowingStateLoss()
+            }
+        }
+
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         viewModel.getWeatherFromLocalSourceRus()
@@ -59,10 +69,10 @@ class MainFragment : Fragment() {
     private fun changeWeatherDataSet() {
         if (isDataSetRus) {
             viewModel.getWeatherFromLocalSourceWorld()
-            binding.mainFragmentFAB.setImageResource(R.drawable.ic_baseline_flag_24)
+            binding.mainFragmentFAB.setImageResource(R.drawable.all)
         } else {
             viewModel.getWeatherFromLocalSourceRus()
-            binding.mainFragmentFAB.setImageResource(R.drawable.ic_baseline_outlined_flag_24)
+            binding.mainFragmentFAB.setImageResource(R.drawable.russ)
         }
         isDataSetRus = !isDataSetRus
     }

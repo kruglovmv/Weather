@@ -10,7 +10,9 @@ data class Weather(
     val feelsLike: Int = 0,
     val windSpeed: Byte = 1,
     val windDir: String = "n",
-    val condition: String = "cloudy "
+    val condition: String = "cloudy",
+    val pressure:Int = 755,
+    val humidity:Byte = 55
 ) : Parcelable {
     fun toString(temperature: Int): String {
         if (temperature > 0) return "+$temperature"
@@ -48,4 +50,20 @@ fun getRussianCities(): List<Weather> {
         Weather(City("Ростов-на-Дону", 47.2357137, 39.701505), 17, 18),
         Weather(City("Уфа", 54.7387621, 55.972055400000045), 19, 20)
     )
+}
+
+fun getConditions(condition: String): String {
+    when (condition) {
+        "cloudy" -> return "Облачно"
+        "clear" -> return "Ясно"
+        else -> return ""
+    }
+}
+
+fun getWinDir(win: String): String {
+    when (win) {
+        "n" -> return "северный"
+        "s" -> return "южный"
+        else -> return ""
+    }
 }

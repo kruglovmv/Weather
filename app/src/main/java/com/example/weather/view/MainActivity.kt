@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity(), Toolbar.OnMenuItemClickListener,
         setContentView(view)
         initDrawer()
 
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, MainFragment.newInstance())
+            .commitNow()
 
     }
 
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity(), Toolbar.OnMenuItemClickListener,
         drawer = binding.drawerLayout
         navigationView = binding.navView
         toolbar = binding.toolbar
-        //  toolbar.setOnMenuItemClickListener(this)
         val toggle = ActionBarDrawerToggle(
             this,
             drawer,
@@ -56,9 +55,19 @@ class MainActivity : AppCompatActivity(), Toolbar.OnMenuItemClickListener,
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         when (id) {
-            R.id.nav_about -> TODO()
-            R.id.nav_home -> TODO()
-            R.id.nav_settings -> TODO()
+            R.id.nav_about -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, AboutFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
+            R.id.nav_home -> {
+                drawer = binding.drawerLayout
+                drawer.closeDrawer(GravityCompat.START)
+            }
+            R.id.nav_settings -> {
+
+            }
         }
         drawer = binding.drawerLayout
         drawer.closeDrawer(GravityCompat.START)
